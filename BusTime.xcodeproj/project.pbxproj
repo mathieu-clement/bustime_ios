@@ -15,6 +15,13 @@
 		11CC4CBD1BD0122B002E9D84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CC4CBB1BD0122B002E9D84 /* LaunchScreen.storyboard */; };
 		11CC4CC81BD0122B002E9D84 /* BusTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CC71BD0122B002E9D84 /* BusTimeTests.swift */; };
 		11CC4CD31BD0122B002E9D84 /* BusTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CD21BD0122B002E9D84 /* BusTimeUITests.swift */; };
+		11CC4CE11BD01990002E9D84 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CC4CE01BD01990002E9D84 /* Alamofire.framework */; };
+		11CC4CE31BD019A3002E9D84 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CC4CE21BD019A3002E9D84 /* SwiftyJSON.framework */; };
+		11CC4CE81BD02B4F002E9D84 /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CE71BD02B4F002E9D84 /* RestClient.swift */; settings = {ASSET_TAGS = (); }; };
+		11CC4CEA1BD035E5002E9D84 /* JsonDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CE91BD035E5002E9D84 /* JsonDeserializer.swift */; settings = {ASSET_TAGS = (); }; };
+		11CC4CED1BD03629002E9D84 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CEC1BD03629002E9D84 /* Stop.swift */; settings = {ASSET_TAGS = (); }; };
+		11CC4CEF1BD036E1002E9D84 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CEE1BD036E1002E9D84 /* Connection.swift */; settings = {ASSET_TAGS = (); }; };
+		11CC4CF21BD037CA002E9D84 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CF11BD037CA002E9D84 /* DateUtils.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,13 @@
 		11CC4CCE1BD0122B002E9D84 /* BusTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BusTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CC4CD21BD0122B002E9D84 /* BusTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTimeUITests.swift; sourceTree = "<group>"; };
 		11CC4CD41BD0122B002E9D84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11CC4CE01BD01990002E9D84 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		11CC4CE21BD019A3002E9D84 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		11CC4CE71BD02B4F002E9D84 /* RestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestClient.swift; sourceTree = "<group>"; };
+		11CC4CE91BD035E5002E9D84 /* JsonDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonDeserializer.swift; sourceTree = "<group>"; };
+		11CC4CEC1BD03629002E9D84 /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		11CC4CEE1BD036E1002E9D84 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		11CC4CF11BD037CA002E9D84 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11CC4CE11BD01990002E9D84 /* Alamofire.framework in Frameworks */,
+				11CC4CE31BD019A3002E9D84 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +95,8 @@
 		11CC4CA31BD0122B002E9D84 = {
 			isa = PBXGroup;
 			children = (
+				11CC4CE21BD019A3002E9D84 /* SwiftyJSON.framework */,
+				11CC4CE01BD01990002E9D84 /* Alamofire.framework */,
 				11CC4CAE1BD0122B002E9D84 /* BusTime */,
 				11CC4CC61BD0122B002E9D84 /* BusTimeTests */,
 				11CC4CD11BD0122B002E9D84 /* BusTimeUITests */,
@@ -99,6 +117,9 @@
 		11CC4CAE1BD0122B002E9D84 /* BusTime */ = {
 			isa = PBXGroup;
 			children = (
+				11CC4CF01BD037A6002E9D84 /* utils */,
+				11CC4CEB1BD0361F002E9D84 /* model */,
+				11CC4CE41BD02996002E9D84 /* rest */,
 				11CC4CAF1BD0122B002E9D84 /* AppDelegate.swift */,
 				11CC4CB11BD0122B002E9D84 /* ViewController.swift */,
 				11CC4CB31BD0122B002E9D84 /* Main.storyboard */,
@@ -128,6 +149,32 @@
 			path = BusTimeUITests;
 			sourceTree = "<group>";
 		};
+		11CC4CE41BD02996002E9D84 /* rest */ = {
+			isa = PBXGroup;
+			children = (
+				11CC4CE71BD02B4F002E9D84 /* RestClient.swift */,
+				11CC4CE91BD035E5002E9D84 /* JsonDeserializer.swift */,
+			);
+			name = rest;
+			sourceTree = "<group>";
+		};
+		11CC4CEB1BD0361F002E9D84 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				11CC4CEC1BD03629002E9D84 /* Stop.swift */,
+				11CC4CEE1BD036E1002E9D84 /* Connection.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		11CC4CF01BD037A6002E9D84 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				11CC4CF11BD037CA002E9D84 /* DateUtils.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +185,7 @@
 				11CC4CA81BD0122B002E9D84 /* Sources */,
 				11CC4CA91BD0122B002E9D84 /* Frameworks */,
 				11CC4CAA1BD0122B002E9D84 /* Resources */,
+				11CC4CF31BD048CE002E9D84 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -253,14 +301,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		11CC4CF31BD048CE002E9D84 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		11CC4CA81BD0122B002E9D84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				11CC4CB21BD0122B002E9D84 /* ViewController.swift in Sources */,
+				11CC4CF21BD037CA002E9D84 /* DateUtils.swift in Sources */,
 				11CC4CB81BD0122B002E9D84 /* BusTime.xcdatamodeld in Sources */,
+				11CC4CE81BD02B4F002E9D84 /* RestClient.swift in Sources */,
 				11CC4CB01BD0122B002E9D84 /* AppDelegate.swift in Sources */,
+				11CC4CEA1BD035E5002E9D84 /* JsonDeserializer.swift in Sources */,
+				11CC4CED1BD03629002E9D84 /* Stop.swift in Sources */,
+				11CC4CEF1BD036E1002E9D84 /* Connection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +471,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BusTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mathieuclement.BusTime;
@@ -411,6 +486,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = BusTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mathieuclement.BusTime;
