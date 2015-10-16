@@ -9,11 +9,26 @@
 import Foundation
 import SwiftyJSON
 
-/*
 public func toStop (json: JSON) -> Stop {
-
+    let platformCodeOpt = json["platformCode"].string
+    var deserializedPlatformCode : String?
+    if platformCodeOpt != nil {
+        if platformCodeOpt!.isEmpty {
+            deserializedPlatformCode = nil
+        } else {
+            deserializedPlatformCode = platformCodeOpt
+        }
+    }
+    
+    return Stop(
+        id: json["id"].string!,
+        stopName: json["stopName"].string!,
+        platformCode: deserializedPlatformCode,
+        latitude: json["latitude"].float!,
+        longitude: json["longitude"].float!,
+        distance: json["distance"].int!
+    )
 }
-*/
 
 public func toConnection (json: JSON) -> Connection {
     return Connection(

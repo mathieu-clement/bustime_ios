@@ -9,5 +9,5 @@
 import Foundation
 
 public func minutesFromNow (date: NSDate) -> Int {
-    return Int(NSInteger(date.timeIntervalSinceNow) / 60)
+    return Int(ceil(date.timeIntervalSinceNow / 60.0))
 }

@@ -20,8 +20,9 @@ private func get(path: String, parameters: [String: AnyObject]? = nil,
         
         Alamofire.request(.GET, url, parameters: parameters)
             .responseJSON { response in
+                NSLog("GET Raw Result: \(response.result.value)")
                 if response.result.isFailure {
-                    NSLog("GET Error: \(response.result.error)")
+                    NSLog("GET Error: \(response.result.error!)")
                     
                     if onFailure != nil {
                         onFailure!(error: response.result.error)
@@ -29,7 +30,7 @@ private func get(path: String, parameters: [String: AnyObject]? = nil,
                 }
                 else {
                     let json = JSON(response.result.value!)
-                    NSLog("GET Result: \(json)")
+                    NSLog("GET JSON Result: \(json)")
                     
                     if onSuccess != nil {
                         onSuccess!(result: json)
@@ -38,17 +39,17 @@ private func get(path: String, parameters: [String: AnyObject]? = nil,
         }
 }
 
-public func getClosestStops (latitude: Float, longitude: Float, maxRadius: Int? = nil,
+public func getClosestStops (latitude latitude: Float, longitude: Float, maxRadius: Int? = nil,
     onSuccess: ((result:JSON) -> Void)? = nil,
     onFailure: ((error:NSError?) -> Void)? = nil) {
         var parameters : [String: AnyObject] = ["latitude": latitude, "longitude": longitude]
         if maxRadius != nil {
-            parameters["maxRadius"] = maxRadius!
+            parameters["maxDist"] = maxRadius!
         }
         get("/stops/closest", parameters: parameters, onSuccess: onSuccess, onFailure: onFailure)
 }
 
-public func getNextBuses (stopId: String, maxMinutes: Int?,
+public func getNextBuses (stopId stopId: String, maxMinutes: Int?,
     onSuccess: ((result:JSON) -> Void)? = nil,
     onFailure: ((error:NSError?) -> Void)? = nil) {
         var parameters = [String: AnyObject]()

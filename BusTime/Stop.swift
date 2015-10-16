@@ -10,9 +10,9 @@ import Foundation
 
 public struct Stop {
     let id : String
+    let stopName : String
+    let platformCode : String?
     let latitude : Float
     let longitude : Float
-    let platformCode : String?
-    let stopName : String
     let distance : Int
 }
