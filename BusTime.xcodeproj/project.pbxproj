@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11CC4CB01BD0122B002E9D84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CAF1BD0122B002E9D84 /* AppDelegate.swift */; };
-		11CC4CB21BD0122B002E9D84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CB11BD0122B002E9D84 /* ViewController.swift */; };
+		11CC4CB21BD0122B002E9D84 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CB11BD0122B002E9D84 /* MainViewController.swift */; };
 		11CC4CB51BD0122B002E9D84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CC4CB31BD0122B002E9D84 /* Main.storyboard */; };
 		11CC4CB81BD0122B002E9D84 /* BusTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CB61BD0122B002E9D84 /* BusTime.xcdatamodeld */; };
 		11CC4CBA1BD0122B002E9D84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11CC4CB91BD0122B002E9D84 /* Assets.xcassets */; };
@@ -24,6 +24,9 @@
 		11CC4CF21BD037CA002E9D84 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CF11BD037CA002E9D84 /* DateUtils.swift */; settings = {ASSET_TAGS = (); }; };
 		11CC4CF51BD11465002E9D84 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CF41BD11465002E9D84 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		11CC4CF71BD1664B002E9D84 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CC4CF61BD1664B002E9D84 /* XCGLogger.framework */; };
+		11CC4D031BD18417002E9D84 /* StopUIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4D021BD18417002E9D84 /* StopUIPickerViewDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		11CC4D051BD1886D002E9D84 /* StopPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4D041BD1886D002E9D84 /* StopPickerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		11CC4D071BD193DE002E9D84 /* BTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4D061BD193DE002E9D84 /* BTNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +49,7 @@
 /* Begin PBXFileReference section */
 		11CC4CAC1BD0122B002E9D84 /* BusTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CC4CAF1BD0122B002E9D84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11CC4CB11BD0122B002E9D84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11CC4CB11BD0122B002E9D84 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		11CC4CB41BD0122B002E9D84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11CC4CB71BD0122B002E9D84 /* BusTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BusTime.xcdatamodel; sourceTree = "<group>"; };
 		11CC4CB91BD0122B002E9D84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +70,15 @@
 		11CC4CF11BD037CA002E9D84 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		11CC4CF41BD11465002E9D84 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		11CC4CF61BD1664B002E9D84 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
+		11CC4CF91BD17F39002E9D84 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		11CC4CFB1BD17F45002E9D84 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		11CC4CFD1BD17F4D002E9D84 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		11CC4CFE1BD17FCA002E9D84 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		11CC4CFF1BD17FCC002E9D84 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		11CC4D001BD17FCF002E9D84 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
+		11CC4D021BD18417002E9D84 /* StopUIPickerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopUIPickerViewDelegate.swift; sourceTree = "<group>"; };
+		11CC4D041BD1886D002E9D84 /* StopPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPickerViewController.swift; sourceTree = "<group>"; };
+		11CC4D061BD193DE002E9D84 /* BTNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,11 +135,11 @@
 		11CC4CAE1BD0122B002E9D84 /* BusTime */ = {
 			isa = PBXGroup;
 			children = (
+				11CC4D011BD183EE002E9D84 /* ui */,
 				11CC4CF01BD037A6002E9D84 /* utils */,
 				11CC4CEB1BD0361F002E9D84 /* model */,
 				11CC4CE41BD02996002E9D84 /* rest */,
 				11CC4CAF1BD0122B002E9D84 /* AppDelegate.swift */,
-				11CC4CB11BD0122B002E9D84 /* ViewController.swift */,
 				11CC4CB31BD0122B002E9D84 /* Main.storyboard */,
 				11CC4CB91BD0122B002E9D84 /* Assets.xcassets */,
 				11CC4CBB1BD0122B002E9D84 /* LaunchScreen.storyboard */,
@@ -180,6 +192,17 @@
 				11CC4CF41BD11465002E9D84 /* Constants.swift */,
 			);
 			name = utils;
+			sourceTree = "<group>";
+		};
+		11CC4D011BD183EE002E9D84 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				11CC4D061BD193DE002E9D84 /* BTNavigationController.swift */,
+				11CC4CB11BD0122B002E9D84 /* MainViewController.swift */,
+				11CC4D021BD18417002E9D84 /* StopUIPickerViewDelegate.swift */,
+				11CC4D041BD1886D002E9D84 /* StopPickerViewController.swift */,
+			);
+			name = ui;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +273,7 @@
 				TargetAttributes = {
 					11CC4CAB1BD0122B002E9D84 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = EGP8XYQYXS;
 					};
 					11CC4CC21BD0122B002E9D84 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -332,15 +356,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11CC4CB21BD0122B002E9D84 /* ViewController.swift in Sources */,
+				11CC4CB21BD0122B002E9D84 /* MainViewController.swift in Sources */,
 				11CC4CF21BD037CA002E9D84 /* DateUtils.swift in Sources */,
+				11CC4D051BD1886D002E9D84 /* StopPickerViewController.swift in Sources */,
 				11CC4CB81BD0122B002E9D84 /* BusTime.xcdatamodeld in Sources */,
 				11CC4CE81BD02B4F002E9D84 /* RestClient.swift in Sources */,
 				11CC4CB01BD0122B002E9D84 /* AppDelegate.swift in Sources */,
 				11CC4CEA1BD035E5002E9D84 /* JsonDeserializer.swift in Sources */,
 				11CC4CED1BD03629002E9D84 /* Stop.swift in Sources */,
 				11CC4CEF1BD036E1002E9D84 /* Connection.swift in Sources */,
+				11CC4D071BD193DE002E9D84 /* BTNavigationController.swift in Sources */,
 				11CC4CF51BD11465002E9D84 /* Constants.swift in Sources */,
+				11CC4D031BD18417002E9D84 /* StopUIPickerViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +407,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				11CC4CB41BD0122B002E9D84 /* Base */,
+				11CC4CFE1BD17FCA002E9D84 /* fr */,
+				11CC4CFF1BD17FCC002E9D84 /* de */,
+				11CC4D001BD17FCF002E9D84 /* it */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -388,6 +418,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				11CC4CBC1BD0122B002E9D84 /* Base */,
+				11CC4CF91BD17F39002E9D84 /* fr */,
+				11CC4CFB1BD17F45002E9D84 /* de */,
+				11CC4CFD1BD17F4D002E9D84 /* it */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -480,6 +513,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: mathieu.clement@freebourg.org (5WD3L4EVBA)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -495,6 +529,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: mathieu.clement@freebourg.org (5WD3L4EVBA)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

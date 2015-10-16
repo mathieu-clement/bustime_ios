@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7hu-cS-lmx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BusTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Main View Controller" customClass="MainViewController" customModule="BusTime" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,12 +16,117 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="S4M-KS-oV9">
+                                <rect key="frame" x="20" y="560" width="20" height="20"/>
+                                <animations/>
+                                <attributedString key="userComments">
+                                    <fragment content="dfgdfg">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="smallSystem"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Indicator Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIP-jc-OiW">
+                                <rect key="frame" x="48" y="559" width="165" height="21"/>
+                                <animations/>
+                                <accessibility key="accessibilityConfiguration" label="">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZ0-rr-Ktq">
+                                <rect key="frame" x="20" y="72" width="560" height="34"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title="..."/>
+                                <connections>
+                                    <action selector="onBusStopButtonTouchedUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="Teg-kT-Mfd"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oZ0-rr-Ktq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Cwt-e3-Cwv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oZ0-rr-Ktq" secondAttribute="trailing" id="ObD-u6-L4Q"/>
+                            <constraint firstItem="bIP-jc-OiW" firstAttribute="leading" secondItem="S4M-KS-oV9" secondAttribute="trailing" constant="8" id="Ug3-K1-o8L"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="oZ0-rr-Ktq" secondAttribute="leading" id="cmf-BS-Kjt"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="S4M-KS-oV9" secondAttribute="leading" id="pmj-im-I7i"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S4M-KS-oV9" secondAttribute="bottom" constant="20" id="r1U-gd-ERq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bIP-jc-OiW" secondAttribute="bottom" constant="20" id="xNr-u8-79U"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="L7c-fS-h04">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="0Z2-xm-rqT"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="S4M-KS-oV9" id="GpA-O8-q50"/>
+                        <outlet property="activityIndicatorText" destination="bIP-jc-OiW" id="jsM-XC-BZQ"/>
+                        <outlet property="busStopButton" destination="oZ0-rr-Ktq" id="0OI-CT-Axf"/>
+                        <segue destination="E92-uM-Jtc" kind="show" identifier="pickStop" id="WMA-XH-OrA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1205" y="420"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IFd-wO-1Aj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7hu-cS-lmx" customClass="BTNavigationController" customModule="BusTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u1m-yO-zXZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9aH-hE-GTf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vz5-kW-tVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="393" y="420"/>
+        </scene>
+        <!--Choose Stop View Controller-->
+        <scene sceneID="bs2-4f-AXH">
+            <objects>
+                <viewController title="Select stop of departure" id="E92-uM-Jtc" userLabel="Choose Stop View Controller" customClass="StopPickerViewController" customModule="BusTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2FO-M2-Y77"/>
+                        <viewControllerLayoutGuide type="bottom" id="mwM-hO-Vln"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="keU-2S-aja">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSF-mm-Pq9" userLabel="Stop Picker View">
+                                <rect key="frame" x="20" y="72" width="560" height="508"/>
+                                <animations/>
+                            </pickerView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="CSF-mm-Pq9" secondAttribute="leading" id="4hd-Nv-9KW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CSF-mm-Pq9" secondAttribute="trailing" id="PY6-ZJ-QEq"/>
+                            <constraint firstItem="CSF-mm-Pq9" firstAttribute="top" secondItem="2FO-M2-Y77" secondAttribute="bottom" constant="8" id="Ux9-60-GCD"/>
+                            <constraint firstItem="mwM-hO-Vln" firstAttribute="top" secondItem="CSF-mm-Pq9" secondAttribute="bottom" constant="20" id="n6f-E7-zKP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="CSF-mm-Pq9" id="xau-rh-Gsg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w7u-fX-xUB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1205" y="1137"/>
         </scene>
     </scenes>
 </document>

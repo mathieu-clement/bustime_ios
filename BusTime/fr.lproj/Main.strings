@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Activity Indicator Text"; ObjectID = "bIP-jc-OiW"; */
+"bIP-jc-OiW.text" = "Activity Indicator Text";
+
+/* Class = "UILabel"; text = "Departures from:"; ObjectID = "cb5-eA-B25"; */
+"cb5-eA-B25.text" = "Au départ de :";
+
+/* Class = "UIButton"; normalTitle = "..."; ObjectID = "oZ0-rr-Ktq"; */
+"oZ0-rr-Ktq.normalTitle" = "...";

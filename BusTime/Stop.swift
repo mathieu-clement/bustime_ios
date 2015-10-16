@@ -9,10 +9,14 @@
 import Foundation
 import CoreLocation
 
-public struct Stop {
+public struct Stop : Equatable {
     let id : String
     let stopName : String
     let platformCode : String?
     let location : CLLocation
     let distance : Int
+}
+
+public func ==(lhs: Stop, rhs: Stop) -> Bool {
+    return lhs.id == rhs.id
 }
