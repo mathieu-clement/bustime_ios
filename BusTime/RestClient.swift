@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import XCGLogger
 
 public class RestClient {
     
@@ -18,13 +19,13 @@ public class RestClient {
         onSuccess: ((result:JSON) -> Void)? = nil,
         onFailure: ((error:NSError?) -> Void)? = nil) {
             let url = "\(BASE_URL)\(path)"
-            NSLog("Preparing for GET request to: \(url) with parameters \(parameters)")
+            LOG.debug("Path: \(url) with parameters \(parameters)")
             
             Alamofire.request(.GET, url, parameters: parameters)
                 .responseJSON { response in
-                    NSLog("GET Raw Result: \(response.result.value)")
+                    LOG.verbose("Raw Result: \(response.result.value)")
                     if response.result.isFailure {
-                        NSLog("GET Error: \(response.result.error!)")
+                        LOG.error("\(response.result.error!)")
                         
                         if onFailure != nil {
                             onFailure!(error: response.result.error)
@@ -32,7 +33,7 @@ public class RestClient {
                     }
                     else {
                         let json = JSON(response.result.value!)
-                        NSLog("GET JSON Result: \(json)")
+                        LOG.verbose("JSON Result: \(json)")
                         
                         if onSuccess != nil {
                             onSuccess!(result: json)

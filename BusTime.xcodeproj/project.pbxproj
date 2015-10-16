@@ -23,6 +23,7 @@
 		11CC4CEF1BD036E1002E9D84 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CEE1BD036E1002E9D84 /* Connection.swift */; settings = {ASSET_TAGS = (); }; };
 		11CC4CF21BD037CA002E9D84 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CF11BD037CA002E9D84 /* DateUtils.swift */; settings = {ASSET_TAGS = (); }; };
 		11CC4CF51BD11465002E9D84 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CF41BD11465002E9D84 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		11CC4CF71BD1664B002E9D84 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CC4CF61BD1664B002E9D84 /* XCGLogger.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		11CC4CEE1BD036E1002E9D84 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		11CC4CF11BD037CA002E9D84 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		11CC4CF41BD11465002E9D84 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		11CC4CF61BD1664B002E9D84 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			files = (
 				11CC4CE11BD01990002E9D84 /* Alamofire.framework in Frameworks */,
 				11CC4CE31BD019A3002E9D84 /* SwiftyJSON.framework in Frameworks */,
+				11CC4CF71BD1664B002E9D84 /* XCGLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +100,7 @@
 		11CC4CA31BD0122B002E9D84 = {
 			isa = PBXGroup;
 			children = (
+				11CC4CF61BD1664B002E9D84 /* XCGLogger.framework */,
 				11CC4CE21BD019A3002E9D84 /* SwiftyJSON.framework */,
 				11CC4CE01BD01990002E9D84 /* Alamofire.framework */,
 				11CC4CAE1BD0122B002E9D84 /* BusTime */,
@@ -313,6 +317,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
 			);
 			outputPaths = (
 			);

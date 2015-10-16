@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import XCGLogger
 
 class ViewController: UIViewController {
     
@@ -26,22 +27,22 @@ class ViewController: UIViewController {
                     let futureDate = connection.departure
                     let differenceInMinutes = minutesFromNow(futureDate)
                     
-                    print(connection)
-                    print("That's in \(differenceInMinutes) minutes.")
+                    LOG.debug("\(connection)")
+                    LOG.verbose("That's in \(differenceInMinutes) minutes.")
                 }
             }, onFailure: { (error) -> Void in
-                print("Error retrieving next buses: \(error)")
+                
         })
         
-        restClient.getClosestStops(latitude: 46.755559, longitude: 7.152352, maxRadius: CLOSEST_STOPS_MAX_DISTANCE,
+        restClient.getClosestStops(latitude: 46.755559, longitude: 7.152352, maxRadius: 500,
             onSuccess: { (resultarray) -> Void in
                 for (_,result) in resultarray {
                     let stop = toStop(result)
-                    print(stop)
+                    LOG.debug("\(stop)")
                 }
                 
             }, onFailure: { (error) -> Void in
-                print("Error retrieving closest stops: \(error)")
+                
         })
     }
     
