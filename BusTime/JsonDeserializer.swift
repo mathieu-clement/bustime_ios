@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import CoreLocation
 import SwiftyJSON
 
 public func toStop (json: JSON) -> Stop {
+    // Platform code
     let platformCodeOpt = json["platformCode"].string
     var deserializedPlatformCode : String?
     if platformCodeOpt != nil {
@@ -20,12 +22,16 @@ public func toStop (json: JSON) -> Stop {
         }
     }
     
+    // Latitude and longitude
+    let latitude = json["latitude"].double!
+    let longitude = json["longitude"].double!
+    let location = CLLocation(latitude: latitude, longitude: longitude)
+    
     return Stop(
         id: json["id"].string!,
         stopName: json["stopName"].string!,
         platformCode: deserializedPlatformCode,
-        latitude: json["latitude"].float!,
-        longitude: json["longitude"].float!,
+        location: location,
         distance: json["distance"].int!
     )
 }

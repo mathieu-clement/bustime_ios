@@ -7,12 +7,12 @@
 //
 
 import Foundation
+import CoreLocation
 
 public struct Stop {
     let id : String
     let stopName : String
     let platformCode : String?
-    let latitude : Float
-    let longitude : Float
+    let location : CLLocation
     let distance : Int
 }
