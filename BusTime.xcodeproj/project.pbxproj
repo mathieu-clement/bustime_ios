@@ -22,6 +22,7 @@
 		11CC4CED1BD03629002E9D84 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CEC1BD03629002E9D84 /* Stop.swift */; settings = {ASSET_TAGS = (); }; };
 		11CC4CEF1BD036E1002E9D84 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CEE1BD036E1002E9D84 /* Connection.swift */; settings = {ASSET_TAGS = (); }; };
 		11CC4CF21BD037CA002E9D84 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CF11BD037CA002E9D84 /* DateUtils.swift */; settings = {ASSET_TAGS = (); }; };
+		11CC4CF51BD11465002E9D84 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CF41BD11465002E9D84 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		11CC4CEC1BD03629002E9D84 /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		11CC4CEE1BD036E1002E9D84 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		11CC4CF11BD037CA002E9D84 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		11CC4CF41BD11465002E9D84 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				11CC4CF11BD037CA002E9D84 /* DateUtils.swift */,
+				11CC4CF41BD11465002E9D84 /* Constants.swift */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				11CC4CEA1BD035E5002E9D84 /* JsonDeserializer.swift in Sources */,
 				11CC4CED1BD03629002E9D84 /* Stop.swift in Sources */,
 				11CC4CEF1BD036E1002E9D84 /* Connection.swift in Sources */,
+				11CC4CF51BD11465002E9D84 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
