@@ -28,6 +28,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var activityIndicatorText: UILabel!
     
+    @IBOutlet weak var busStopLabel: UILabel!
+    
     @IBOutlet weak var busStopButton: UIButton!
     
     override func viewDidLoad() {
@@ -36,8 +38,6 @@ class MainViewController: UIViewController {
         
         activityIndicator.hidden = true
         activityIndicatorText.hidden = true
-        
-        
         
         /*
         restClient.getNextBuses(stopId: "8587793", maxMinutes: NEXT_BUSES_MAX_TIME,
@@ -94,8 +94,8 @@ class MainViewController: UIViewController {
         }
     }
     
-    func refreshStopButtonText() {
-        busStopButton.setTitle(currentStop?.stopName, forState: .Normal)
+    func refreshStopName() {
+        busStopLabel.text = currentStop?.stopName
     }
     
     func startProgress(text: String) {

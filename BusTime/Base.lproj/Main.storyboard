@@ -8,7 +8,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="Main View Controller" customClass="MainViewController" customModule="BusTime" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Bus Time" id="BYZ-38-t0r" userLabel="Main View Controller" customClass="MainViewController" customModule="BusTime" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -39,24 +39,33 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZ0-rr-Ktq">
-                                <rect key="frame" x="20" y="72" width="560" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZ0-rr-Ktq">
+                                <rect key="frame" x="77" y="75" width="503" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <state key="normal" title="..."/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="11"/>
+                                <state key="normal" title="Pick another"/>
                                 <connections>
                                     <action selector="onBusStopButtonTouchedUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="Teg-kT-Mfd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Locating the nearest bus stop..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZK-is-4cD">
+                                <rect key="frame" x="20" y="78" width="49" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oZ0-rr-Ktq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Cwt-e3-Cwv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="oZ0-rr-Ktq" secondAttribute="trailing" id="ObD-u6-L4Q"/>
                             <constraint firstItem="bIP-jc-OiW" firstAttribute="leading" secondItem="S4M-KS-oV9" secondAttribute="trailing" constant="8" id="Ug3-K1-o8L"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="oZ0-rr-Ktq" secondAttribute="leading" id="cmf-BS-Kjt"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="zZK-is-4cD" secondAttribute="leading" id="WHS-NW-jzq"/>
+                            <constraint firstItem="oZ0-rr-Ktq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="11" id="Xm8-L1-IO9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oZ0-rr-Ktq" secondAttribute="trailing" id="dVS-cZ-bao"/>
+                            <constraint firstItem="zZK-is-4cD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="14" id="hbf-Mt-C9D"/>
                             <constraint firstAttribute="leadingMargin" secondItem="S4M-KS-oV9" secondAttribute="leading" id="pmj-im-I7i"/>
+                            <constraint firstItem="oZ0-rr-Ktq" firstAttribute="leading" secondItem="zZK-is-4cD" secondAttribute="trailing" constant="8" id="qHK-nJ-aam"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S4M-KS-oV9" secondAttribute="bottom" constant="20" id="r1U-gd-ERq"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bIP-jc-OiW" secondAttribute="bottom" constant="20" id="xNr-u8-79U"/>
                         </constraints>
@@ -68,6 +77,7 @@
                         <outlet property="activityIndicator" destination="S4M-KS-oV9" id="GpA-O8-q50"/>
                         <outlet property="activityIndicatorText" destination="bIP-jc-OiW" id="jsM-XC-BZQ"/>
                         <outlet property="busStopButton" destination="oZ0-rr-Ktq" id="0OI-CT-Axf"/>
+                        <outlet property="busStopLabel" destination="zZK-is-4cD" id="YTt-it-hTx"/>
                         <segue destination="E92-uM-Jtc" kind="show" identifier="pickStop" id="WMA-XH-OrA"/>
                     </connections>
                 </viewController>
