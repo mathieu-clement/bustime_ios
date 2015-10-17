@@ -28,7 +28,6 @@ class DepartureTimesTableView : UITableView, UITableViewDelegate, UITableViewDat
         self.delegate = self
         self.dataSource = self
         self.dateFormatter.locale = NSLocale(localeIdentifier: "fr_CH")
-        dateFormatter.dateFormat = "HH:mm"
     }
     
     func setConnections(connections: [Connection]) {
@@ -83,6 +82,16 @@ class DepartureTimesTableView : UITableView, UITableViewDelegate, UITableViewDat
         if nbMin < 61 {
             cell?.detailTextLabel!.text = "\(nbMin) min"
         } else {
+            let isToday = NSCalendar.currentCalendar().compareDate(
+                NSDate(),
+                toDate: connection.departure,
+                toUnitGranularity: NSCalendarUnit.Day).rawValue == 0
+            
+            if isToday {
+                dateFormatter.dateFormat = "HH:mm"
+            } else {
+                dateFormatter.dateFormat = "dd.MM.yyyy  HH:mm"
+            }
             cell?.detailTextLabel!.text = dateFormatter.stringFromDate(connection.departure)
         }
         return cell

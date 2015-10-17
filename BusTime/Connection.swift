@@ -23,6 +23,16 @@ public struct Connection {
                 connectionsByTripShortName[connection.tripShortName] = [connection]
             }
         }
+        
+        // Now, for each trip sort by departure time
+        
+        for tripShortName in connectionsByTripShortName.keys {
+            connectionsByTripShortName[tripShortName]!.sortInPlace({
+                (conn1: Connection, conn2: Connection) -> Bool in
+                return conn1.departure.compare(conn2.departure).rawValue < 0
+            })
+        }
+        
         return connectionsByTripShortName
     }
 }
