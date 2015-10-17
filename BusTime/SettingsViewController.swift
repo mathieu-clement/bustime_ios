@@ -19,6 +19,7 @@ class SettingsViewController : UIViewController {
         super.viewDidLoad()
         let maxRadius = NSUserDefaults.standardUserDefaults().integerForKey("maxRadius")
         maxRadiusSlider.value = Float(maxRadius)
+        maxRadiusSlider.maximumValue = Float(CLOSEST_STOPS_MAX_DISTANCE)
         refreshLabelForDistance(maxRadius)
     }
     

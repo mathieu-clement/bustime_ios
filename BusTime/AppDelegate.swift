@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         LOG.setup(
-            .Verbose,
+            .Info,
             showLogIdentifier: false,
             showFunctionName: true,
             showThreadName: true,
@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let prefs = NSUserDefaults.standardUserDefaults()
         if prefs.integerForKey("maxRadius") == 0 {
-            prefs.setInteger(300, forKey: "maxRadius")
+            prefs.setInteger(CLOSEST_STOPS_DEFAULT_DISTANCE, forKey: "maxRadius")
         }
         
         return true
