@@ -55,7 +55,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="JlZ-sI-w7Y" customClass="DepartureTimesTableView" customModule="BusTime" customModuleProvider="target">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="JlZ-sI-w7Y" customClass="DepartureTimesTableView" customModule="BusTime" customModuleProvider="target">
                                 <rect key="frame" x="20" y="113" width="560" height="438"/>
                                 <animations/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -97,6 +97,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="JlZ-sI-w7Y" secondAttribute="trailing" id="HmI-ZN-VhS"/>
                             <constraint firstAttribute="leadingMargin" secondItem="JlZ-sI-w7Y" secondAttribute="leading" id="TVu-8L-NYU"/>
+                            <constraint firstItem="bIP-jc-OiW" firstAttribute="top" secondItem="JlZ-sI-w7Y" secondAttribute="bottom" constant="8" id="U9e-YR-p5h"/>
                             <constraint firstItem="bIP-jc-OiW" firstAttribute="leading" secondItem="S4M-KS-oV9" secondAttribute="trailing" constant="8" id="Ug3-K1-o8L"/>
                             <constraint firstAttribute="leadingMargin" secondItem="zZK-is-4cD" secondAttribute="leading" id="WHS-NW-jzq"/>
                             <constraint firstItem="oZ0-rr-Ktq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="11" id="Xm8-L1-IO9"/>
