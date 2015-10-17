@@ -13,6 +13,7 @@ class DepartureTimesTableView : UITableView, UITableViewDelegate, UITableViewDat
     var connections = [Connection]()
     var connectionsByTripShortName = OrderedDictionary<String, [Connection]>()
     let dateFormatter = NSDateFormatter()
+    var timer : NSTimer! = nil
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -28,11 +29,30 @@ class DepartureTimesTableView : UITableView, UITableViewDelegate, UITableViewDat
         self.delegate = self
         self.dataSource = self
         self.dateFormatter.locale = NSLocale(localeIdentifier: "fr_CH")
+        startRefreshingEveryMinute()
     }
     
     func setConnections(connections: [Connection]) {
         self.connections = connections
         self.connectionsByTripShortName = Connection.groupByTripShortName(connections)
+        reloadData()
+    }
+    
+    func startRefreshingEveryMinute() {
+        timer = NSTimer.scheduledTimerWithTimeInterval(60,
+            target: self,
+            selector: Selector("oneMinutePassed"),
+            userInfo: nil,
+            repeats: true)
+    }
+    
+    func stopRefreshingEveryMinute() {
+        if timer != nil {
+            timer.invalidate()
+        }
+    }
+    
+    func oneMinutePassed() {
         reloadData()
     }
     

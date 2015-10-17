@@ -57,6 +57,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidDisappear(animated: Bool) {
         LOCATION_MANAGER.stopUpdatingLocation()
+        departureTimesTableView.stopRefreshingEveryMinute()
     }
     
     @IBAction func onBusStopButtonTouchedUpInside() {
@@ -146,10 +147,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func refreshStop() {
-        let tableView = departureTimesTableView as DepartureTimesTableView
-        
         // Avoid displaying the previous schedule when the stop is changed
-        tableView.setConnections([Connection]())
+        departureTimesTableView.setConnections([Connection]())
         
         if currentStop != nil {
             busStopLabel.text = currentStop?.stopName
@@ -174,7 +173,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                         // TODO display to user
                     }
                     
-                    tableView.setConnections(connections)
+                    self.departureTimesTableView.setConnections(connections)
                 }, onFailure: { (error) -> Void in
                     // TODO Tell user about network problem
             })
