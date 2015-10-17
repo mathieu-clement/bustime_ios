@@ -13,7 +13,12 @@ public class StopUIPickerViewDelegate : NSObject, UIPickerViewDelegate, UIPicker
     public var stops = [Stop]()
     
     @objc public func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return stops[row].stopName
+        let stop = stops[row]
+        if stop.platformCode != nil {
+            return "\(stop.stopName) (Pl. \(stop.platformCode!))"
+        } else {
+            return stop.stopName
+        }
     }
     
     @objc public func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
