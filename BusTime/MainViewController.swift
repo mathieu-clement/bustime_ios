@@ -20,21 +20,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     var currentStop : Stop? {
         set(newVal) {
             (parentViewController as! BTNavigationController).currentStop = newVal
-            
-            restClient.getNextBuses(stopId: (newVal?.id)!, maxMinutes: NEXT_BUSES_MAX_TIME,
-                onSuccess: { (resultarray) -> Void in
-                    for (_,result) in resultarray {
-                        let connection = toConnection(result)
-                        
-                        let futureDate = connection.departure
-                        let differenceInMinutes = minutesFromNow(futureDate)
-                        
-                        LOG.debug("\(connection)")
-                        LOG.verbose("That's in \(differenceInMinutes) minutes.")
-                    }
-                }, onFailure: { (error) -> Void in
-                    
-            })
         }
         get {
             return (parentViewController as! BTNavigationController).currentStop
@@ -49,6 +34,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var busStopButton: UIButton!
     
+    @IBOutlet weak var departureTimesTableView: DepartureTimesTableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -58,15 +46,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         activityIndicator.hidden = true
         activityIndicatorText.hidden = true
         
-        /*
-        
-        */
-        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        refreshStop()
         startLookingForStopsNearby()
     }
     
@@ -105,7 +90,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 
                 if !newClosestStops.isEmpty {
-                    self.busStopButton.enabled = true
+                    self.busStopButton.enabled = newClosestStops.count > 1
                     
                     if self.currentStop != nil &&
                         self.closestStops.first! != self.currentStop! &&
@@ -113,6 +98,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                             // user hand picked a stop and it's still in the neighborhood
                     } else {
                         self.currentStop = newClosestStops.first!
+                        self.refreshStop()
                     }
                     
                     self.closestStops = newClosestStops
@@ -120,6 +106,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
                     LOG.info("No stops nearby")
                     // TODO What if there are no bus stops nearby? Try extending range automatically or warn user.
                     self.busStopButton.enabled = false
+                    self.currentStop = nil
                 }
                 
             }, onFailure: { (error) -> Void in
@@ -131,7 +118,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     func onLocationAuthorized() {
         LOCATION_MANAGER.desiredAccuracy = 200
         LOCATION_MANAGER.distanceFilter = 300
-        // LOCATION_MANAGER.requestLocation()
+        //LOCATION_MANAGER.requestLocation()
         LOCATION_MANAGER.startUpdatingLocation()
     }
     
@@ -150,13 +137,48 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         LOG.error("Could not determine location due to \(error).")
-        alerts.displayNoLocation { () -> Void in
-            LOCATION_MANAGER.requestLocation()
+        busStopButton.enabled = false
+        if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse {
+            alerts.displayNoLocation { () -> Void in
+                //LOCATION_MANAGER.requestLocation()
+            }
         }
     }
     
-    func refreshStopName() {
-        busStopLabel.text = currentStop?.stopName
+    func refreshStop() {
+        let tableView = departureTimesTableView as DepartureTimesTableView
+        
+        if currentStop != nil {
+            busStopLabel.text = currentStop?.stopName
+            
+            restClient.getNextBuses(stopId: (currentStop?.id)!, maxMinutes: NEXT_BUSES_MAX_TIME,
+                onSuccess: { (resultarray) -> Void in
+                    var connections = [Connection]()
+                    for (_,result) in resultarray {
+                        let connection = toConnection(result)
+                        connections.append(connection)
+                        
+                        /*
+                        let futureDate = connection.departure
+                        let differenceInMinutes = minutesFromNow(futureDate)
+                        
+                        LOG.debug("\(connection)")
+                        LOG.verbose("That's in \(differenceInMinutes) minutes.")
+                        */
+                    }
+                    
+                    if resultarray.isEmpty {
+                        // TODO display to user
+                    }
+                    
+                    tableView.setConnections(connections)
+                }, onFailure: { (error) -> Void in
+                    // TODO Tell user about network problem
+            })
+        } else {
+            busStopLabel.text = "No bus stop nearby"
+            tableView.setConnections([Connection]())
+        }
     }
     
     func startLookingForStopsNearby() {

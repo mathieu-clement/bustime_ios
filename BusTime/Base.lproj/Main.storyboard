@@ -48,17 +48,55 @@
                                     <action selector="onBusStopButtonTouchedUpInside" destination="BYZ-38-t0r" eventType="touchUpInside" id="Teg-kT-Mfd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Locating the nearest bus stop..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZK-is-4cD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="BusTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZK-is-4cD">
                                 <rect key="frame" x="20" y="78" width="49" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="JlZ-sI-w7Y" customClass="DepartureTimesTableView" customModule="BusTime" customModuleProvider="target">
+                                <rect key="frame" x="20" y="113" width="560" height="438"/>
+                                <animations/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="departureTimeTableCell" textLabel="3Do-UL-Khq" detailTextLabel="KF9-Fw-EwK" style="IBUITableViewCellStyleSubtitle" id="D1q-8h-AF5">
+                                        <rect key="frame" x="0.0" y="50" width="560" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D1q-8h-AF5" id="MCa-bm-Bng">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Fribourg, gare" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Do-UL-Khq">
+                                                    <rect key="frame" x="15" y="3" width="108" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="   5 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KF9-Fw-EwK">
+                                                    <rect key="frame" x="15" y="23" width="50" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="JlZ-sI-w7Y" secondAttribute="trailing" id="HmI-ZN-VhS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="JlZ-sI-w7Y" secondAttribute="leading" id="TVu-8L-NYU"/>
                             <constraint firstItem="bIP-jc-OiW" firstAttribute="leading" secondItem="S4M-KS-oV9" secondAttribute="trailing" constant="8" id="Ug3-K1-o8L"/>
                             <constraint firstAttribute="leadingMargin" secondItem="zZK-is-4cD" secondAttribute="leading" id="WHS-NW-jzq"/>
                             <constraint firstItem="oZ0-rr-Ktq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="11" id="Xm8-L1-IO9"/>
@@ -66,6 +104,7 @@
                             <constraint firstItem="zZK-is-4cD" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="14" id="hbf-Mt-C9D"/>
                             <constraint firstAttribute="leadingMargin" secondItem="S4M-KS-oV9" secondAttribute="leading" id="pmj-im-I7i"/>
                             <constraint firstItem="oZ0-rr-Ktq" firstAttribute="leading" secondItem="zZK-is-4cD" secondAttribute="trailing" constant="8" id="qHK-nJ-aam"/>
+                            <constraint firstItem="JlZ-sI-w7Y" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="49" id="qQA-vn-16P"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S4M-KS-oV9" secondAttribute="bottom" constant="20" id="r1U-gd-ERq"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bIP-jc-OiW" secondAttribute="bottom" constant="20" id="xNr-u8-79U"/>
                         </constraints>
@@ -82,6 +121,7 @@
                         <outlet property="activityIndicatorText" destination="bIP-jc-OiW" id="jsM-XC-BZQ"/>
                         <outlet property="busStopButton" destination="oZ0-rr-Ktq" id="0OI-CT-Axf"/>
                         <outlet property="busStopLabel" destination="zZK-is-4cD" id="YTt-it-hTx"/>
+                        <outlet property="departureTimesTableView" destination="JlZ-sI-w7Y" id="9Mt-Xd-kSw"/>
                         <segue destination="E92-uM-Jtc" kind="show" identifier="pickStop" id="WMA-XH-OrA"/>
                     </connections>
                 </viewController>

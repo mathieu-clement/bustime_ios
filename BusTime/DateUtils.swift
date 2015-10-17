@@ -8,6 +8,7 @@
 
 import Foundation
 
+// rounded up
 public func minutesFromNow (date: NSDate) -> Int {
     return Int(ceil(date.timeIntervalSinceNow / 60.0))
 }

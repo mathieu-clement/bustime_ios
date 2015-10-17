@@ -11,7 +11,7 @@ import UIKit
 class BTNavigationController: UINavigationController {
     var currentStop : Stop? {
         didSet {
-            mainViewController.refreshStopName()
+            mainViewController.refreshStop()
         }
     }
     

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		11A5898F1BD23238007C9510 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A5898E1BD23238007C9510 /* Alerts.swift */; settings = {ASSET_TAGS = (); }; };
 		11A589951BD23E41007C9510 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A589941BD23E41007C9510 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		11A589971BD25E94007C9510 /* DepartureTimesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A589961BD25E94007C9510 /* DepartureTimesTableView.swift */; settings = {ASSET_TAGS = (); }; };
+		11C8F1561BD272B200EACD9C /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8F1551BD272B200EACD9C /* OrderedDictionary.swift */; settings = {ASSET_TAGS = (); }; };
 		11CC4CB01BD0122B002E9D84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CAF1BD0122B002E9D84 /* AppDelegate.swift */; };
 		11CC4CB21BD0122B002E9D84 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CB11BD0122B002E9D84 /* MainViewController.swift */; };
 		11CC4CB51BD0122B002E9D84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CC4CB31BD0122B002E9D84 /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 /* Begin PBXFileReference section */
 		11A5898E1BD23238007C9510 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		11A589941BD23E41007C9510 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		11A589961BD25E94007C9510 /* DepartureTimesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureTimesTableView.swift; sourceTree = "<group>"; };
+		11C8F1551BD272B200EACD9C /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		11CC4CAC1BD0122B002E9D84 /* BusTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CC4CAF1BD0122B002E9D84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11CC4CB11BD0122B002E9D84 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				11CC4CB11BD0122B002E9D84 /* MainViewController.swift */,
+				11A589961BD25E94007C9510 /* DepartureTimesTableView.swift */,
 			);
 			name = main;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			children = (
 				11CC4CEC1BD03629002E9D84 /* Stop.swift */,
 				11CC4CEE1BD036E1002E9D84 /* Connection.swift */,
+				11C8F1551BD272B200EACD9C /* OrderedDictionary.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -415,6 +421,8 @@
 				11CC4CEF1BD036E1002E9D84 /* Connection.swift in Sources */,
 				11CC4D071BD193DE002E9D84 /* BTNavigationController.swift in Sources */,
 				11CC4CF51BD11465002E9D84 /* Constants.swift in Sources */,
+				11C8F1561BD272B200EACD9C /* OrderedDictionary.swift in Sources */,
+				11A589971BD25E94007C9510 /* DepartureTimesTableView.swift in Sources */,
 				11CC4D031BD18417002E9D84 /* StopUIPickerViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

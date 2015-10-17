@@ -14,10 +14,12 @@ public class StopUIPickerViewDelegate : NSObject, UIPickerViewDelegate, UIPicker
     
     @objc public func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let stop = stops[row]
+        let distanceStr = stop.distance > 51 ? " (\(stop.distance) m)" : ""
+        
         if stop.platformCode != nil {
-            return "\(stop.stopName) (Pl. \(stop.platformCode!))"
+            return "\(stop.stopName) (Pl. \(stop.platformCode!)\(distanceStr))"
         } else {
-            return stop.stopName
+            return "\(stop.stopName)\(distanceStr)"
         }
     }
     
