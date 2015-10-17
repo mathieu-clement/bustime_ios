@@ -8,9 +8,12 @@
 
 import UIKit
 import CoreData
+import CoreLocation
 import XCGLogger
 
 public let LOG = XCGLogger.defaultInstance()
+
+public let LOCATION_MANAGER = CLLocationManager()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        LOG.setup(.Verbose, showLogIdentifier: false, showFunctionName: true, showThreadName: true, showLogLevel: true, showFileNames: true, showLineNumbers: true, showDate: true)
+        LOG.setup(
+            .Verbose,
+            showLogIdentifier: false,
+            showFunctionName: true,
+            showThreadName: true,
+            showLogLevel: true,
+            showFileNames: true,
+            showLineNumbers: true,
+            showDate: true)
         return true
     }
     

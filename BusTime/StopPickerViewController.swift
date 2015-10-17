@@ -22,6 +22,8 @@ class StopPickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // TODO Do not allow pressing on button if stops is empty
+        // TODO Error message if not stop returned
         pickerView.delegate = stopPickerDelegate
         pickerView.dataSource = stopPickerDelegate
         
