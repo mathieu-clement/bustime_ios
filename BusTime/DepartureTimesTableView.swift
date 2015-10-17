@@ -12,6 +12,7 @@ class DepartureTimesTableView : UITableView, UITableViewDelegate, UITableViewDat
     
     var connections = [Connection]()
     var connectionsByTripShortName = OrderedDictionary<String, [Connection]>()
+    let dateFormatter = NSDateFormatter()
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -26,6 +27,8 @@ class DepartureTimesTableView : UITableView, UITableViewDelegate, UITableViewDat
     private func initTV() {
         self.delegate = self
         self.dataSource = self
+        self.dateFormatter.locale = NSLocale(localeIdentifier: "fr_CH")
+        dateFormatter.dateFormat = "HH:mm"
     }
     
     func setConnections(connections: [Connection]) {
@@ -80,7 +83,7 @@ class DepartureTimesTableView : UITableView, UITableViewDelegate, UITableViewDat
         if nbMin < 61 {
             cell?.detailTextLabel!.text = "\(nbMin) min"
         } else {
-            
+            cell?.detailTextLabel!.text = dateFormatter.stringFromDate(connection.departure)
         }
         return cell
     }

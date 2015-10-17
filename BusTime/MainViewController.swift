@@ -148,6 +148,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     func refreshStop() {
         let tableView = departureTimesTableView as DepartureTimesTableView
         
+        // Avoid displaying the previous schedule when the stop is changed
+        tableView.setConnections([Connection]())
+        
         if currentStop != nil {
             busStopLabel.text = currentStop?.stopName
             
@@ -177,7 +180,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
             })
         } else {
             busStopLabel.text = "No bus stop nearby"
-            tableView.setConnections([Connection]())
         }
     }
     
