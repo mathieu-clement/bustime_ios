@@ -31,6 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             showFileNames: true,
             showLineNumbers: true,
             showDate: true)
+        
+        
+        let prefs = NSUserDefaults.standardUserDefaults()
+        if prefs.integerForKey("maxRadius") == 0 {
+            prefs.setInteger(300, forKey: "maxRadius")
+        }
+        
         return true
     }
     

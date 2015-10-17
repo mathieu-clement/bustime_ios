@@ -71,7 +71,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="L7c-fS-h04">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="0Z2-xm-rqT"/>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="0Z2-xm-rqT">
+                            <connections>
+                                <segue destination="wq4-2t-ZW7" kind="show" identifier="settings" id="UN1-7K-QVI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="S4M-KS-oV9" id="GpA-O8-q50"/>
@@ -84,6 +88,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1205" y="420"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="h3J-vD-rvJ">
+            <objects>
+                <viewController id="wq4-2t-ZW7" customClass="SettingsViewController" customModule="BusTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fOM-rm-a1e"/>
+                        <viewControllerLayoutGuide type="bottom" id="ddk-s7-u93"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yCy-Sf-GZZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show bus stops up to..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ml3-26-icT">
+                                <rect key="frame" x="20" y="72" width="179" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="500" minValue="0.0" maxValue="3000" translatesAutoresizingMaskIntoConstraints="NO" id="rt8-yc-Ai5">
+                                <rect key="frame" x="18" y="101" width="564" height="31"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="wq4-2t-ZW7" eventType="valueChanged" id="6WU-yG-3nB"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30000  m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlV-27-LAA">
+                                <rect key="frame" x="503" y="72" width="77" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="Ml3-26-icT" secondAttribute="leading" id="74w-0j-UWZ"/>
+                            <constraint firstItem="Ml3-26-icT" firstAttribute="top" secondItem="fOM-rm-a1e" secondAttribute="bottom" constant="8" id="AG6-L3-zxd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AlV-27-LAA" secondAttribute="trailing" id="FMP-7u-pjb"/>
+                            <constraint firstItem="rt8-yc-Ai5" firstAttribute="top" secondItem="Ml3-26-icT" secondAttribute="bottom" constant="8" id="eEr-km-rQV"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="rt8-yc-Ai5" secondAttribute="leading" id="hx3-hV-su7"/>
+                            <constraint firstItem="AlV-27-LAA" firstAttribute="top" secondItem="fOM-rm-a1e" secondAttribute="bottom" constant="8" id="r4w-5e-hkp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rt8-yc-Ai5" secondAttribute="trailing" id="yPh-qk-hwE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="maxRadiusLabel" destination="AlV-27-LAA" id="Tco-hu-jaR"/>
+                        <outlet property="maxRadiusSlider" destination="rt8-yc-Ai5" id="MPo-hu-YDO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qjN-CA-Ssi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1954" y="420"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IFd-wO-1Aj">

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11A5898F1BD23238007C9510 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A5898E1BD23238007C9510 /* Alerts.swift */; settings = {ASSET_TAGS = (); }; };
+		11A589951BD23E41007C9510 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A589941BD23E41007C9510 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		11CC4CB01BD0122B002E9D84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CAF1BD0122B002E9D84 /* AppDelegate.swift */; };
 		11CC4CB21BD0122B002E9D84 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CB11BD0122B002E9D84 /* MainViewController.swift */; };
 		11CC4CB51BD0122B002E9D84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CC4CB31BD0122B002E9D84 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		11A5898E1BD23238007C9510 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		11A589941BD23E41007C9510 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		11CC4CAC1BD0122B002E9D84 /* BusTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CC4CAF1BD0122B002E9D84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11CC4CB11BD0122B002E9D84 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,39 @@
 			name = application;
 			sourceTree = "<group>";
 		};
+		11A589901BD23D78007C9510 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				11CC4CB11BD0122B002E9D84 /* MainViewController.swift */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
+		11A589911BD23D8D007C9510 /* stopPicker */ = {
+			isa = PBXGroup;
+			children = (
+				11CC4D041BD1886D002E9D84 /* StopPickerViewController.swift */,
+				11CC4D021BD18417002E9D84 /* StopUIPickerViewDelegate.swift */,
+			);
+			name = stopPicker;
+			sourceTree = "<group>";
+		};
+		11A589921BD23DB4007C9510 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				11A5898E1BD23238007C9510 /* Alerts.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		11A589931BD23DD6007C9510 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				11A589941BD23E41007C9510 /* SettingsViewController.swift */,
+			);
+			name = settings;
+			sourceTree = "<group>";
+		};
 		11CC4CA31BD0122B002E9D84 = {
 			isa = PBXGroup;
 			children = (
@@ -148,9 +183,9 @@
 			children = (
 				11A5898D1BD23204007C9510 /* application */,
 				11CC4D011BD183EE002E9D84 /* ui */,
-				11CC4CF01BD037A6002E9D84 /* utils */,
 				11CC4CEB1BD0361F002E9D84 /* model */,
 				11CC4CE41BD02996002E9D84 /* rest */,
+				11CC4CF01BD037A6002E9D84 /* utils */,
 				11CC4CB31BD0122B002E9D84 /* Main.storyboard */,
 				11CC4CB91BD0122B002E9D84 /* Assets.xcassets */,
 				11CC4CBB1BD0122B002E9D84 /* LaunchScreen.storyboard */,
@@ -207,11 +242,11 @@
 		11CC4D011BD183EE002E9D84 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				11A5898E1BD23238007C9510 /* Alerts.swift */,
 				11CC4D061BD193DE002E9D84 /* BTNavigationController.swift */,
-				11CC4CB11BD0122B002E9D84 /* MainViewController.swift */,
-				11CC4D041BD1886D002E9D84 /* StopPickerViewController.swift */,
-				11CC4D021BD18417002E9D84 /* StopUIPickerViewDelegate.swift */,
+				11A589901BD23D78007C9510 /* main */,
+				11A589911BD23D8D007C9510 /* stopPicker */,
+				11A589931BD23DD6007C9510 /* settings */,
+				11A589921BD23DB4007C9510 /* utils */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -376,6 +411,7 @@
 				11CC4CEA1BD035E5002E9D84 /* JsonDeserializer.swift in Sources */,
 				11CC4CED1BD03629002E9D84 /* Stop.swift in Sources */,
 				11A5898F1BD23238007C9510 /* Alerts.swift in Sources */,
+				11A589951BD23E41007C9510 /* SettingsViewController.swift in Sources */,
 				11CC4CEF1BD036E1002E9D84 /* Connection.swift in Sources */,
 				11CC4D071BD193DE002E9D84 /* BTNavigationController.swift in Sources */,
 				11CC4CF51BD11465002E9D84 /* Constants.swift in Sources */,

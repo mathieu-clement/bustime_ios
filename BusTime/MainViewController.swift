@@ -20,6 +20,21 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     var currentStop : Stop? {
         set(newVal) {
             (parentViewController as! BTNavigationController).currentStop = newVal
+            
+            restClient.getNextBuses(stopId: (newVal?.id)!, maxMinutes: NEXT_BUSES_MAX_TIME,
+                onSuccess: { (resultarray) -> Void in
+                    for (_,result) in resultarray {
+                        let connection = toConnection(result)
+                        
+                        let futureDate = connection.departure
+                        let differenceInMinutes = minutesFromNow(futureDate)
+                        
+                        LOG.debug("\(connection)")
+                        LOG.verbose("That's in \(differenceInMinutes) minutes.")
+                    }
+                }, onFailure: { (error) -> Void in
+                    
+            })
         }
         get {
             return (parentViewController as! BTNavigationController).currentStop
@@ -44,36 +59,19 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         activityIndicatorText.hidden = true
         
         /*
-        restClient.getNextBuses(stopId: "8587793", maxMinutes: NEXT_BUSES_MAX_TIME,
-        onSuccess: { (resultarray) -> Void in
-        for (_,result) in resultarray {
-        let connection = toConnection(result)
         
-        let futureDate = connection.departure
-        let differenceInMinutes = minutesFromNow(futureDate)
-        
-        LOG.debug("\(connection)")
-        LOG.verbose("That's in \(differenceInMinutes) minutes.")
-        }
-        }, onFailure: { (error) -> Void in
-        
-        })
         */
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-        startProgress("Looking for bus stops nearby")
-        
-        LOCATION_MANAGER.delegate = self
-        
-        if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Restricted ||
-            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                LOG.error("Location is disabled. Showing error message and exiting.")
-        } else if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined) {
-            LOCATION_MANAGER.requestWhenInUseAuthorization()
-        } else {
-            onLocationAuthorized()
-        }
-        
+        startLookingForStopsNearby()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        LOCATION_MANAGER.stopUpdatingLocation()
     }
     
     @IBAction func onBusStopButtonTouchedUpInside() {
@@ -96,35 +94,46 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         restClient.getClosestStops(
             latitude: Float(location.latitude),
             longitude: Float(location.longitude),
-            maxRadius: 2000,
+            maxRadius: NSUserDefaults.standardUserDefaults().integerForKey("maxRadius"),
             onSuccess: { (resultarray) -> Void in
                 self.stopProgress()
-                self.closestStops.removeAll()
+                var newClosestStops = [Stop]()
                 for (_,result) in resultarray {
                     let stop = toStop(result)
                     LOG.debug("\(stop)")
-                    self.closestStops.append(stop)
+                    newClosestStops.append(stop)
                 }
                 
-                if !self.closestStops.isEmpty {
-                    self.currentStop = self.closestStops.first!
+                if !newClosestStops.isEmpty {
+                    self.busStopButton.enabled = true
+                    
+                    if self.currentStop != nil &&
+                        self.closestStops.first! != self.currentStop! &&
+                        newClosestStops.contains(self.currentStop!) {
+                            // user hand picked a stop and it's still in the neighborhood
+                    } else {
+                        self.currentStop = newClosestStops.first!
+                    }
+                    
+                    self.closestStops = newClosestStops
                 } else {
                     LOG.info("No stops nearby")
+                    // TODO What if there are no bus stops nearby? Try extending range automatically or warn user.
+                    self.busStopButton.enabled = false
                 }
                 
             }, onFailure: { (error) -> Void in
                 self.stopProgress()
-                // TODO What if there are no bus stops nearby? Try extending range automatically or warn user.
+                // TODO Warn network error, retry / quit
         })
     }
     
     func onLocationAuthorized() {
         LOCATION_MANAGER.desiredAccuracy = 200
-        LOCATION_MANAGER.distanceFilter = 100
-        LOCATION_MANAGER.requestLocation()
+        LOCATION_MANAGER.distanceFilter = 300
+        // LOCATION_MANAGER.requestLocation()
+        LOCATION_MANAGER.startUpdatingLocation()
     }
-    
-    
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status != CLAuthorizationStatus.Denied && status != CLAuthorizationStatus.Restricted {
@@ -148,6 +157,25 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     func refreshStopName() {
         busStopLabel.text = currentStop?.stopName
+    }
+    
+    func startLookingForStopsNearby() {
+        startProgress("Looking for bus stops nearby")
+        
+        LOCATION_MANAGER.delegate = self
+        
+        if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Restricted ||
+            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
+                LOG.info("User denied permission for location.")
+                alerts.displayNoLocation(onRetry: { () -> Void in
+                    LOCATION_MANAGER.requestWhenInUseAuthorization()
+                })
+        } else if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined) {
+            LOCATION_MANAGER.requestWhenInUseAuthorization()
+        } else {
+            onLocationAuthorized()
+        }
+        
     }
     
     func startProgress(text: String) {
