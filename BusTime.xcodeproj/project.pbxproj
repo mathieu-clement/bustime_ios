@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11A5898F1BD23238007C9510 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A5898E1BD23238007C9510 /* Alerts.swift */; settings = {ASSET_TAGS = (); }; };
-		11A589951BD23E41007C9510 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A589941BD23E41007C9510 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		11A589971BD25E94007C9510 /* DepartureTimesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A589961BD25E94007C9510 /* DepartureTimesTableView.swift */; settings = {ASSET_TAGS = (); }; };
-		11C8F1561BD272B200EACD9C /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8F1551BD272B200EACD9C /* OrderedDictionary.swift */; settings = {ASSET_TAGS = (); }; };
+		11A5898F1BD23238007C9510 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A5898E1BD23238007C9510 /* Alerts.swift */; };
+		11A589951BD23E41007C9510 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A589941BD23E41007C9510 /* SettingsViewController.swift */; };
+		11A589971BD25E94007C9510 /* DepartureTimesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A589961BD25E94007C9510 /* DepartureTimesTableView.swift */; };
+		11C8F1561BD272B200EACD9C /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8F1551BD272B200EACD9C /* OrderedDictionary.swift */; };
 		11CC4CB01BD0122B002E9D84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CAF1BD0122B002E9D84 /* AppDelegate.swift */; };
 		11CC4CB21BD0122B002E9D84 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CB11BD0122B002E9D84 /* MainViewController.swift */; };
 		11CC4CB51BD0122B002E9D84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11CC4CB31BD0122B002E9D84 /* Main.storyboard */; };
@@ -21,16 +21,16 @@
 		11CC4CD31BD0122B002E9D84 /* BusTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CD21BD0122B002E9D84 /* BusTimeUITests.swift */; };
 		11CC4CE11BD01990002E9D84 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CC4CE01BD01990002E9D84 /* Alamofire.framework */; };
 		11CC4CE31BD019A3002E9D84 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CC4CE21BD019A3002E9D84 /* SwiftyJSON.framework */; };
-		11CC4CE81BD02B4F002E9D84 /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CE71BD02B4F002E9D84 /* RestClient.swift */; settings = {ASSET_TAGS = (); }; };
-		11CC4CEA1BD035E5002E9D84 /* JsonDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CE91BD035E5002E9D84 /* JsonDeserializer.swift */; settings = {ASSET_TAGS = (); }; };
-		11CC4CED1BD03629002E9D84 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CEC1BD03629002E9D84 /* Stop.swift */; settings = {ASSET_TAGS = (); }; };
-		11CC4CEF1BD036E1002E9D84 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CEE1BD036E1002E9D84 /* Connection.swift */; settings = {ASSET_TAGS = (); }; };
-		11CC4CF21BD037CA002E9D84 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CF11BD037CA002E9D84 /* DateUtils.swift */; settings = {ASSET_TAGS = (); }; };
-		11CC4CF51BD11465002E9D84 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CF41BD11465002E9D84 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		11CC4CE81BD02B4F002E9D84 /* RestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CE71BD02B4F002E9D84 /* RestClient.swift */; };
+		11CC4CEA1BD035E5002E9D84 /* JsonDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CE91BD035E5002E9D84 /* JsonDeserializer.swift */; };
+		11CC4CED1BD03629002E9D84 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CEC1BD03629002E9D84 /* Stop.swift */; };
+		11CC4CEF1BD036E1002E9D84 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CEE1BD036E1002E9D84 /* Connection.swift */; };
+		11CC4CF21BD037CA002E9D84 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CF11BD037CA002E9D84 /* DateUtils.swift */; };
+		11CC4CF51BD11465002E9D84 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4CF41BD11465002E9D84 /* Constants.swift */; };
 		11CC4CF71BD1664B002E9D84 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11CC4CF61BD1664B002E9D84 /* XCGLogger.framework */; };
-		11CC4D031BD18417002E9D84 /* StopUIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4D021BD18417002E9D84 /* StopUIPickerViewDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		11CC4D051BD1886D002E9D84 /* StopPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4D041BD1886D002E9D84 /* StopPickerViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		11CC4D071BD193DE002E9D84 /* BTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4D061BD193DE002E9D84 /* BTNavigationController.swift */; settings = {ASSET_TAGS = (); }; };
+		11CC4D031BD18417002E9D84 /* StopUIPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4D021BD18417002E9D84 /* StopUIPickerViewDelegate.swift */; };
+		11CC4D051BD1886D002E9D84 /* StopPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4D041BD1886D002E9D84 /* StopPickerViewController.swift */; };
+		11CC4D071BD193DE002E9D84 /* BTNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC4D061BD193DE002E9D84 /* BTNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		117921571BDD020E007DFEE0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		11A5898E1BD23238007C9510 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		11A589941BD23E41007C9510 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		11A589961BD25E94007C9510 /* DepartureTimesTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureTimesTableView.swift; sourceTree = "<group>"; };
@@ -81,9 +82,6 @@
 		11CC4CF91BD17F39002E9D84 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		11CC4CFB1BD17F45002E9D84 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		11CC4CFD1BD17F4D002E9D84 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		11CC4CFE1BD17FCA002E9D84 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		11CC4CFF1BD17FCC002E9D84 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		11CC4D001BD17FCF002E9D84 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Main.strings; sourceTree = "<group>"; };
 		11CC4D021BD18417002E9D84 /* StopUIPickerViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopUIPickerViewDelegate.swift; sourceTree = "<group>"; };
 		11CC4D041BD1886D002E9D84 /* StopPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopPickerViewController.swift; sourceTree = "<group>"; };
 		11CC4D061BD193DE002E9D84 /* BTNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTNavigationController.swift; sourceTree = "<group>"; };
@@ -344,6 +342,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 11CC4CA31BD0122B002E9D84;
 			productRefGroup = 11CC4CAD1BD0122B002E9D84 /* Products */;
@@ -463,9 +462,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				11CC4CB41BD0122B002E9D84 /* Base */,
-				11CC4CFE1BD17FCA002E9D84 /* fr */,
-				11CC4CFF1BD17FCC002E9D84 /* de */,
-				11CC4D001BD17FCF002E9D84 /* it */,
+				117921571BDD020E007DFEE0 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -569,15 +566,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: mathieu.clement@freebourg.org (5WD3L4EVBA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = BusTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mathieuclement.BusTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -585,15 +585,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: mathieu.clement@freebourg.org (5WD3L4EVBA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = BusTime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mathieuclement.BusTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

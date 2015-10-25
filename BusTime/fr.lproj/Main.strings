@@ -1,9 +1,30 @@
 
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "0Z2-xm-rqT"; */
+"0Z2-xm-rqT.title" = "Paramètres";
+
+/* Class = "UILabel"; text = "Fribourg, gare"; ObjectID = "3Do-UL-Khq"; */
+"3Do-UL-Khq.text" = "Fribourg, gare";
+
+/* Class = "UILabel"; text = "30000  m"; ObjectID = "AlV-27-LAA"; */
+"AlV-27-LAA.text" = "30000  m";
+
+/* Class = "UIViewController"; title = "Bus Time"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "Bus Time";
+
+/* Class = "UIViewController"; title = "Select stop of departure"; ObjectID = "E92-uM-Jtc"; */
+"E92-uM-Jtc.title" = "Au départ de :";
+
+/* Class = "UILabel"; text = "   5 min"; ObjectID = "KF9-Fw-EwK"; */
+"KF9-Fw-EwK.text" = "   5 min";
+
+/* Class = "UILabel"; text = "Show bus stops up to..."; ObjectID = "Ml3-26-icT"; */
+"Ml3-26-icT.text" = "Montrer les arrêts jusqu'à...";
+
 /* Class = "UILabel"; text = "Activity Indicator Text"; ObjectID = "bIP-jc-OiW"; */
 "bIP-jc-OiW.text" = "Activity Indicator Text";
 
-/* Class = "UILabel"; text = "Departures from:"; ObjectID = "cb5-eA-B25"; */
-"cb5-eA-B25.text" = "Au départ de :";
+/* Class = "UIButton"; normalTitle = "Pick another"; ObjectID = "oZ0-rr-Ktq"; */
+"oZ0-rr-Ktq.normalTitle" = "Partir d'ailleurs";
 
-/* Class = "UIButton"; normalTitle = "..."; ObjectID = "oZ0-rr-Ktq"; */
-"oZ0-rr-Ktq.normalTitle" = "...";
+/* Class = "UILabel"; text = "BusTime"; ObjectID = "zZK-is-4cD"; */
+"zZK-is-4cD.text" = "BusTime";
