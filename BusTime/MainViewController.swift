@@ -11,7 +11,7 @@ import CoreLocation
 import SwiftyJSON
 import XCGLogger
 
-class MainViewController: UIViewController, CLLocationManagerDelegate {
+class MainViewController: UIViewController, CLLocationManagerDelegate, ConnectionsDelegate {
     
     let restClient = RestClient()
     var alerts = Alerts!()
@@ -146,40 +146,47 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func refreshStop() {
-        // Avoid displaying the previous schedule when the stop is changed
-        departureTimesTableView.setConnections([Connection]())
-        
-        if currentStop != nil {
-            busStopLabel.text = currentStop?.stopName
+    func refreshStop(onSuccess pOnSuccess: ([Connection] -> Void)? = nil,
+        onFailure pOnFailure: (AnyObject? -> Void)? = nil) {
+            // Avoid displaying the previous schedule when the stop is changed
+            departureTimesTableView.setConnections([Connection]())
             
-            restClient.getNextBuses(stopId: (currentStop?.id)!, maxMinutes: NEXT_BUSES_MAX_TIME,
-                onSuccess: { (resultarray) -> Void in
-                    var connections = [Connection]()
-                    for (_,result) in resultarray {
-                        let connection = toConnection(result)
-                        connections.append(connection)
+            if currentStop != nil {
+                busStopLabel.text = currentStop?.stopName
+                
+                restClient.getNextBuses(stopId: (currentStop?.id)!, maxMinutes: NEXT_BUSES_MAX_TIME,
+                    onSuccess: { (resultarray) -> Void in
+                        var connections = [Connection]()
+                        for (_,result) in resultarray {
+                            let connection = toConnection(result)
+                            connections.append(connection)
+                        }
                         
-                        /*
-                        let futureDate = connection.departure
-                        let differenceInMinutes = minutesFromNow(futureDate)
+                        if resultarray.isEmpty {
+                            // TODO display to user
+                        }
                         
-                        LOG.debug("\(connection)")
-                        LOG.verbose("That's in \(differenceInMinutes) minutes.")
-                        */
-                    }
-                    
-                    if resultarray.isEmpty {
-                        // TODO display to user
-                    }
-                    
-                    self.departureTimesTableView.setConnections(connections)
-                }, onFailure: { (error) -> Void in
-                    // TODO Tell user about network problem
-            })
-        } else {
-            busStopLabel.text = "No bus stop nearby"
-        }
+                        if pOnSuccess != nil {
+                            pOnSuccess!(connections)
+                        }
+                        
+                        self.departureTimesTableView.setConnections(connections)
+                    }, onFailure: { (error) -> Void in
+                        // TODO Tell user about network problem
+                        
+                        if pOnFailure != nil {
+                            pOnFailure!(error)
+                        }
+                })
+            } else {
+                busStopLabel.text = "No bus stop nearby"
+            }
+    }
+    
+    func refreshConnections(callback: ([Connection] -> Void)) {
+        refreshStop(onSuccess: { (connections: [Connection]) -> Void in
+            callback(connections)
+        })
     }
     
     func startLookingForStopsNearby() {

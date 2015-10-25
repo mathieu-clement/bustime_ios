@@ -8,8 +8,19 @@
 
 import UIKit
 
+/* 
+ * When connections become obsolete,
+ * the delegate is asked for new data.
+ * Because it's asynchronous (network operations and such), it calls the callback
+ * when done.
+ */
+protocol ConnectionsDelegate {
+    func refreshConnections(callback: ([Connection] -> Void))
+}
+
 class DepartureTimesTableView : UITableView, UITableViewDelegate, UITableViewDataSource {
     
+    var connectionsDelegate : ConnectionsDelegate!
     var connections = [Connection]()
     var connectionsByTripShortName = OrderedDictionary<String, [Connection]>()
     let dateFormatter = NSDateFormatter()
@@ -53,7 +64,26 @@ class DepartureTimesTableView : UITableView, UITableViewDelegate, UITableViewDat
     }
     
     func oneMinutePassed() {
-        reloadData()
+        reloadConnections()
+    }
+    
+    private func reloadConnections() {
+        // Find if some connections are obsolete
+        var hasObsoleteConnections = false
+        for connection in connections {
+            if minutesFromNow(connection.departure) < 0 {
+                hasObsoleteConnections = true
+                break
+            }
+        }
+        
+        if hasObsoleteConnections {
+            // Update from network
+            connectionsDelegate.refreshConnections(setConnections)
+        } else {
+            // Only refresh times
+            reloadData()
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,7 +96,11 @@ class DepartureTimesTableView : UITableView, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return connectionsByTripShortName.keys[section]
+        let lineNo = connectionsByTripShortName.keys[section]
+        return String.localizedStringWithFormat(NSLocalizedString(
+            "Line $@",
+            comment: "Header displaying bus line number"),
+            lineNo)
     }
     
     

@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         LOG.setup(
-            .Info,
+            .Verbose,
             showLogIdentifier: false,
             showFunctionName: true,
             showThreadName: true,
