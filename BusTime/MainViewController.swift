@@ -179,7 +179,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, Connectio
                         }
                 })
             } else {
-                busStopLabel.text = "No bus stop nearby"
+                busStopLabel.text = NSLocalizedString(
+                    "No bus stops nearby",
+                    comment: "Shown if no bus stop could be found")
             }
     }
     
@@ -210,7 +212,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, Connectio
     
     func startProgress(text: String) {
         activityIndicator.hidden = false
-        activityIndicatorText.text = text
+        activityIndicatorText.text = NSLocalizedString(
+            text,
+            comment: "Text shown when refreshing status")
         activityIndicatorText.hidden = false
         activityIndicator.startAnimating()
     }

@@ -19,17 +19,17 @@ public class Alerts {
     
     public func displayNoLocation(onRetry onRetry: ()->Void) -> UIAlertController {
         let alert = UIAlertController(
-            title: "Location not found",
-            message: "Verify GPS is on and you allowed BusTime to use it in the system preferences.",
+            title: NSLocalizedString("Location not found", comment:""),
+            message: NSLocalizedString("Verify GPS is on and you allowed BusTime to use it in the system preferences.", comment:""),
             preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(
-            title: "Retry",
+            title: NSLocalizedString("Retry", comment:""),
             style: .Default,
             handler: { (action) -> Void in
                 onRetry()
         }))
         alert.addAction(UIAlertAction(
-            title: "Quit",
+            title: NSLocalizedString("Quit", comment:""),
             style: .Destructive,
             handler: { (alert) -> Void in
                 exit(0)

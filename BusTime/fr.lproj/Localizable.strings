@@ -1,1 +1,7 @@
 "Line %@"="Ligne %@";
+"Looking for bus stops nearby"="Recherche des arrêts à proximité";
+"Location not found"="Position GPS non trouvée";
+"Verify GPS is on and you allowed BusTime to use it in the system preferences."="Vérifiez que vous avez permis à Bus Time d'accéder à votre position.";
+"Retry"="Réessayer";
+"Quit"="Quitter";
+"No bus stops nearby"="Pas d'arrêt à proximité";

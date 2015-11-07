@@ -1,0 +1,7 @@
+"Line %@"="Linie %@";
+"Looking for bus stops nearby"="Sucht Bus Haltestellen in der Nähe";
+"Location not found"="Standort nicht gefunden";
+"Verify GPS is on and you allowed BusTime to use it in the system preferences."="Prüfen Sie in der System Einstellungen, dass BusTime kann Geolocation verwenden.";
+"Retry"="Wieder eingeben";
+"Quit"="Beenden";
+"No bus stops nearby"="Keine Bus Haltestelle in der Nähe";

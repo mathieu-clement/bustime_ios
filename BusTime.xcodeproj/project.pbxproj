@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		114F7C741BEE45D7004C3F3C /* appicon in Resources */ = {isa = PBXBuildFile; fileRef = 114F7C731BEE45D7004C3F3C /* appicon */; };
 		1179215F1BDD0DC1007DFEE0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1179215D1BDD0DC1007DFEE0 /* InfoPlist.strings */; };
 		117921641BDD0E26007DFEE0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 117921621BDD0E26007DFEE0 /* Localizable.strings */; };
 		11A5898F1BD23238007C9510 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A5898E1BD23238007C9510 /* Alerts.swift */; };
@@ -53,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		114F7C6F1BEE2B80004C3F3C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		114F7C701BEE2B81004C3F3C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		114F7C711BEE2B81004C3F3C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		114F7C731BEE45D7004C3F3C /* appicon */ = {isa = PBXFileReference; lastKnownFileType = folder; path = appicon; sourceTree = "<group>"; };
 		1179215C1BDD0BD0007DFEE0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		1179215E1BDD0DC1007DFEE0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		117921631BDD0E26007DFEE0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -116,6 +121,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		114F7C721BEE2C20004C3F3C /* de */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = de;
+			sourceTree = "<group>";
+		};
 		117921601BDD0DD0007DFEE0 /* fr */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +140,7 @@
 		117921611BDD0DD7007DFEE0 /* Translations */ = {
 			isa = PBXGroup;
 			children = (
+				114F7C721BEE2C20004C3F3C /* de */,
 				117921601BDD0DD0007DFEE0 /* fr */,
 			);
 			name = Translations;
@@ -186,6 +199,7 @@
 				11CC4CC61BD0122B002E9D84 /* BusTimeTests */,
 				11CC4CD11BD0122B002E9D84 /* BusTimeUITests */,
 				11CC4CAD1BD0122B002E9D84 /* Products */,
+				114F7C731BEE45D7004C3F3C /* appicon */,
 			);
 			sourceTree = "<group>";
 		};
@@ -342,7 +356,7 @@
 				TargetAttributes = {
 					11CC4CAB1BD0122B002E9D84 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = EGP8XYQYXS;
+						DevelopmentTeam = 77SZ87N4SU;
 					};
 					11CC4CC21BD0122B002E9D84 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -362,6 +376,7 @@
 				en,
 				Base,
 				fr,
+				de,
 			);
 			mainGroup = 11CC4CA31BD0122B002E9D84;
 			productRefGroup = 11CC4CAD1BD0122B002E9D84 /* Products */;
@@ -383,6 +398,7 @@
 				117921641BDD0E26007DFEE0 /* Localizable.strings in Resources */,
 				11CC4CBD1BD0122B002E9D84 /* LaunchScreen.storyboard in Resources */,
 				1179215F1BDD0DC1007DFEE0 /* InfoPlist.strings in Resources */,
+				114F7C741BEE45D7004C3F3C /* appicon in Resources */,
 				11CC4CBA1BD0122B002E9D84 /* Assets.xcassets in Resources */,
 				11CC4CB51BD0122B002E9D84 /* Main.storyboard in Resources */,
 			);
@@ -483,6 +499,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1179215E1BDD0DC1007DFEE0 /* fr */,
+				114F7C701BEE2B81004C3F3C /* de */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -491,6 +508,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				117921631BDD0E26007DFEE0 /* fr */,
+				114F7C711BEE2B81004C3F3C /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -500,6 +518,7 @@
 			children = (
 				11CC4CB41BD0122B002E9D84 /* Base */,
 				1179215C1BDD0BD0007DFEE0 /* fr */,
+				114F7C6F1BEE2B80004C3F3C /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -532,7 +551,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: mathieu.clement@freebourg.org (5WD3L4EVBA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: mathieu.clement@freebourg.org (5WD3L4EVBA)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -551,7 +571,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -576,7 +596,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: mathieu.clement@freebourg.org (5WD3L4EVBA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: mathieu.clement@freebourg.org (5WD3L4EVBA)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -589,7 +610,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -601,17 +622,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: mathieu.clement@freebourg.org (5WD3L4EVBA)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = BusTime/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mathieuclement.BusTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c52b12f5-58b0-4e55-953e-2a2f9555aa0b";
 			};
 			name = Debug;
 		};
@@ -620,17 +644,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: mathieu.clement@freebourg.org (5WD3L4EVBA)";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = BusTime/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mathieuclement.BusTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "c52b12f5-58b0-4e55-953e-2a2f9555aa0b";
 			};
 			name = Release;
 		};

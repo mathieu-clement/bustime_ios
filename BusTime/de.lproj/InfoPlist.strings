@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Trouver les arrêts à proximité</string>
+	<string>Bus Haltestelle in der Nähe finden</string>
 </dict>
 </plist>
