@@ -98,7 +98,7 @@ class DepartureTimesTableView : UITableView, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let lineNo = connectionsByTripShortName.keys[section]
         return String.localizedStringWithFormat(NSLocalizedString(
-            "Line $@",
+            "Line %@",
             comment: "Header displaying bus line number"),
             lineNo)
     }
